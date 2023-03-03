@@ -21,9 +21,12 @@ export class UserController {
     )
 }
 
+
+
 //user login
  @Post('login')
-login(@Body() user: User): Observable<Object>{
+login(@Body() user: User): Observable<any>{
+    console.log('%cMyProject%cline:28%cuser', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(222, 125, 44);padding:3px;border-radius:2px', user)
     return this.userService.login(user).pipe(
         map((jwt: string) => {
             return {access_token: jwt};
