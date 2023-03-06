@@ -27,7 +27,7 @@ export class AuthenticationService {
   login(loginForm: LoginForm){
      // console.log('%cMyProject%cline:12%cemail', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(251, 178, 23);padding:3px;border-radius:2px', email)
 
-    return this.http.post<any>('/api/users/login', { email: loginForm.email, password: loginForm.password}).pipe(
+    return this.http.post<any>('api/users/login', { email: loginForm.email, password: loginForm.password}).pipe(
       map((token) => {
         console.log('token');
         localStorage.setItem('blog-token', token.access_token);
