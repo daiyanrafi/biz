@@ -1,4 +1,4 @@
-<h1 style="text-align: center;"></h1>
+<h1 style="text-align: center;">All Biz App Users</h1>
 <div *ngIf="dataSource">
     <mat-table [dataSource]="dataSource.items">
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -29,4 +29,11 @@
             <mat-cell *matCellDef="let row">{{row.role}}</mat-cell>
         </ng-cintainer>
     </mat-table>
+    <mat-paginator 
+        [length]="dataSource.meta.totalItems" 
+        [pageSize]="dataSource.meta.itemsPerPage" 
+        [pageSizeOptions]="[5,10,25,100]"
+        (page)="pageEvent = $event; onPaginateChange($event)"
+        showFirstLastButtons>
+    </mat-paginator>
 </div>

@@ -17,6 +17,7 @@ import { UsersComponent } from './components/users/users.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
 
   ],
   providers: [],
